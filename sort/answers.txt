@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: it is very fast during best case scenario, but is similar to selection sort during worst case scenario
+
+sort2 uses: merge sort
+
+How do you know?: it takes the least amount of time during the worst case scenario, when the array is reversed, is generally fast
+
+sort3 uses: selection sort
+
+How do you know?: worst case scenario and best case scenario takes a similar amount of time, and takes especially long for the best case scenario, where the array is already sorted, which bubble sort excels at

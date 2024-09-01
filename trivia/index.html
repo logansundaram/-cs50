@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function check1(event) {
+
+                let button = event.target;
+
+                if (button.innerHTML == 'A') {
+                    button.style.backgroundColor = 'Green';
+                    button.parentElement.querySelector('.response').innerHTML = 'Correct';
+                }
+                else {
+                    button.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.response').innerHTML = 'Incorrect';
+                }
+            }
+
+            function check2(event) {
+                let button = event.target;
+
+                let input = button.parentElement.querySelector('input');
+
+                if (input.value === '26') {
+                    input.style.backgroundColor = 'Green';
+                    input.parentElement.querySelector('.response').innerHTML = 'Correct';
+                }
+                else {
+                    input.style.backgroundColor = 'Red';
+                    input.parentElement.querySelector('.response').innerHTML = 'Incorrect';}
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section" id="1">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the first letter of the alphabet?</h3>
+                <button onclick="check1(event)">A</button>
+                <button onclick="check1(event)">B</button>
+                <button onclick="check1(event)">C</button>
+                <p class = "response"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>How many letters are in the alphabet?</h3>
+                <input type="text"></input>
+                <button onclick="check2(event)">Check Answer</button>
+                <p class="response"></p>
+            </div>
+        </div>
+    </body>
+</html>
