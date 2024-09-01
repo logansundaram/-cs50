@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+
+{% block main %}
+
+            <!-- Loop through the database entries to display them in this table -->
+
+            {% for task in agenda %}
+                <tr id = {{ task["id"]}}>
+                  <th scope="row">{{ task["id"]}}</th>
+                  <td>{{ task["description"]}}</td>
+                  <td>{{ task["day"]}}</td>
+                  {% if task['status'] == 'Complete' %}
+                    <td><button type="button" name={{ task["id"]}} class="btn btn-success" onclick="change(event)">{{ task['status'] }}</button></td>
+                  {% elif task['status'] == 'Incomplete' %}
+                    <td><button type="button" name={{ task["id"]}} class="btn btn-danger" onclick="change(event)">{{ task['status'] }}</button></td>
+                  {% endif %}
+                </tr>
+            {% endfor %}
+{% endblock %}

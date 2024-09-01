@@ -1,0 +1,8 @@
+SELECT AVG(energy), AVG(valence), AVG(danceability) FROM songs;
++-------------+--------------+-------------------+
+| AVG(energy) | AVG(valence) | AVG(danceability) |
++-------------+--------------+-------------------+
+| 0.65906     | 0.484443     | 0.71646           |
++-------------+--------------+-------------------+
+
+The listener seems to enjoy listening to energetic pop music, characterized by the higher than average energy and high danceability shown throughout the 100 songs. WHile this means of measuring factors in the variety of songs they listened to, it does not consider the duration that they listened to the music, for example, they could list to one slow dance song for 50 hours, yet listened to ten pop songs for an hour each, their aura would skew to pop music despite listening to slow dance the majoirty of the time.

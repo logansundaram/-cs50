@@ -1,0 +1,16 @@
+-- Keep a log of any SQL queries you execute as you solve the mystery.
+
+SELECT description, id FROM crime_scene_reports WHERE street = "Humphrey Street";
+SELECT year FROM crime_scene_reports WHERE id = 295;
+SELECT transcript, id FROM interviews WHERE day = 28 AND month = 7 AND year = 2023;
+SELECT license_plate, id FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2023 AND hour = 10 AND minute > 15 AND minute < 25;
+SELECT id FROM airports WHERE city = "Fiftyville";
+SELECT hour, id, destination_airport_id FROM flights WHERE day = 29 AND month = 7 AND year = 2023 AND origin_airport_id = 8;
+SELECT city FROM airports where id = 4;
+SELECT passport_number FROM passengers WHERE flight_id = 36;
+SELECT name, id FROM people WHERE passport_number IN (SELECT passport_number FROM passengers WHERE flight_id = 36) and license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2023 AND hour = 10 AND minute > 15 AND minute < 25);
+SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2023 AND transaction_type = "withdraw";
+SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2023 AND transaction_type = "withdraw");
+SELECT name, phone_number FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE year = 2023 AND day = 28 AND month = 7 AND duration < 60) AND passport_number IN (SELECT passport_number FROM passengers WHERE flight_id = 36) and license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2023 AND hour = 10 AND minute > 15 AND minute < 25) AND id IN (SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2023 AND transaction_type = "withdraw"));
+SELECT receiver FROM phone_calls WHERE year = 2023 AND day = 28 AND month = 7 AND duration < 60 AND caller = (SELECT phone_number FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE year = 2023 AND day = 28 AND month = 7 AND duration < 60) AND passport_number IN (SELECT passport_number FROM passengers WHERE flight_id = 36) and license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2023 AND hour = 10 AND minute > 15 AND minute < 25) AND id IN (SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2023 AND transaction_type = "withdraw")));
+SELECT name FROM people where phone_number = (SELECT receiver FROM phone_calls WHERE year = 2023 AND day = 28 AND month = 7 AND duration < 60 AND caller = (SELECT phone_number FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE year = 2023 AND day = 28 AND month = 7 AND duration < 60) AND passport_number IN (SELECT passport_number FROM passengers WHERE flight_id = 36) and license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2023 AND hour = 10 AND minute > 15 AND minute < 25) AND id IN (SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2023 AND transaction_type = "withdraw"))));

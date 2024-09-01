@@ -1,0 +1,33 @@
+.btn-dark{
+    background-color : crimson !important;
+    color : black !important;
+}
+
+#Berkeley{
+    background-color : gold !important;
+    color : blue!important;
+}
+
+#Michigan{
+    background-color : navy !important;
+    color : gold!important;
+}
+
+p{
+    font-size : 20px;
+}
+
+h5{
+    font-size : 48px !important;
+}
+
+.apply{
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+}
+
+*{
+    padding : 2px;
+}
